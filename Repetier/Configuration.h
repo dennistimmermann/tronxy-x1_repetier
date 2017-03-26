@@ -37,7 +37,7 @@
 */
 
 #define NUM_EXTRUDER 1
-#define MOTHERBOARD 33
+#define MOTHERBOARD 63
 #include "pins.h"
 
 // ################## EDIT THESE SETTINGS MANUALLY ################
@@ -63,9 +63,9 @@
 #define MIXING_EXTRUDER 0
 
 #define DRIVE_SYSTEM 0
-#define XAXIS_STEPS_PER_MM 80
-#define YAXIS_STEPS_PER_MM 80
-#define ZAXIS_STEPS_PER_MM 80
+#define XAXIS_STEPS_PER_MM 100
+#define YAXIS_STEPS_PER_MM 100
+#define ZAXIS_STEPS_PER_MM 400
 #define EXTRUDER_FAN_COOL_TEMP 50
 #define PDM_FOR_EXTRUDER 0
 #define PDM_FOR_COOLER 0
@@ -79,7 +79,7 @@
 #define EXT0_X_OFFSET 0
 #define EXT0_Y_OFFSET 0
 #define EXT0_Z_OFFSET 0
-#define EXT0_STEPS_PER_MM 370
+#define EXT0_STEPS_PER_MM 90
 #define EXT0_TEMPSENSOR_TYPE 1
 #define EXT0_TEMPSENSOR_PIN TEMP_0_PIN
 #define EXT0_HEATER_PIN HEATER_0_PIN
@@ -142,7 +142,7 @@
 #define RETRACT_DURING_HEATUP true
 #define PID_CONTROL_RANGE 20
 #define SKIP_M109_IF_WITHIN 2
-#define SCALE_PID_TO_MAX 0
+#define SCALE_PID_TO_MAX 1
 #define TEMP_HYSTERESIS 0
 #define EXTRUDE_MAXLENGTH 160
 #define NUM_TEMPS_USERTHERMISTOR0 0
@@ -234,7 +234,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define ENDSTOP_PULLUP_Y_MIN true
 #define ENDSTOP_Y_MIN_INVERTING true
 #define MIN_HARDWARE_ENDSTOP_Y true
-#define ENDSTOP_PULLUP_Z_MIN true
+#define ENDSTOP_PULLUP_Z_MIN true //this
 #define ENDSTOP_Z_MIN_INVERTING true
 #define MIN_HARDWARE_ENDSTOP_Z true
 #define ENDSTOP_PULLUP_X_MAX true
@@ -276,13 +276,13 @@ It also can add a delay to wait for spindle to run on full speed.
 #define DISABLE_E 0
 #define INVERT_X_DIR 0
 #define INVERT_Y_DIR 0
-#define INVERT_Z_DIR 0
+#define INVERT_Z_DIR 1
 #define X_HOME_DIR -1
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR -1
-#define X_MAX_LENGTH 200
-#define Y_MAX_LENGTH 200
-#define Z_MAX_LENGTH 120
+#define X_MAX_LENGTH 150
+#define Y_MAX_LENGTH 150
+#define Z_MAX_LENGTH 150
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
@@ -304,7 +304,7 @@ It also can add a delay to wait for spindle to run on full speed.
 // ##########################################################################################
 
 #define FEATURE_BABYSTEPPING 1
-#define BABYSTEP_MULTIPLICATOR 1
+#define BABYSTEP_MULTIPLICATOR 100
 
 #define DELTA_SEGMENTS_PER_SECOND_PRINT 180 // Move accurate setting for print moves
 #define DELTA_SEGMENTS_PER_SECOND_MOVE 70 // Less accurate setting for other moves
@@ -316,13 +316,13 @@ It also can add a delay to wait for spindle to run on full speed.
 #define DELTASEGMENTS_PER_PRINTLINE 24
 #define STEPPER_INACTIVE_TIME 360L
 #define MAX_INACTIVE_TIME 0L
-#define MAX_FEEDRATE_X 200
-#define MAX_FEEDRATE_Y 200
-#define MAX_FEEDRATE_Z 2
-#define HOMING_FEEDRATE_X 40
-#define HOMING_FEEDRATE_Y 40
+#define MAX_FEEDRATE_X 400
+#define MAX_FEEDRATE_Y 400
+#define MAX_FEEDRATE_Z 4
+#define HOMING_FEEDRATE_X 100
+#define HOMING_FEEDRATE_Y 100
 #define HOMING_FEEDRATE_Z 2
-#define HOMING_ORDER HOME_ORDER_ZXY
+#define HOMING_ORDER HOME_ORDER_XYZ
 #define ZHOME_MIN_TEMPERATURE 0
 #define ZHOME_HEAT_ALL 1
 #define ZHOME_HEAT_HEIGHT 20
@@ -338,12 +338,12 @@ It also can add a delay to wait for spindle to run on full speed.
 #define STEP_DOUBLER_FREQUENCY 12000
 #define ALLOW_QUADSTEPPING 1
 #define DOUBLE_STEP_DELAY 0 // time in microseconds
-#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_X 1000
-#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_Y 1000
-#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_Z 100
-#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_X 1000
-#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_Y 1000
-#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_Z 100
+#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_X 400
+#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_Y 400
+#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_Z 40
+#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_X 400
+#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_Y 400
+#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_Z 40
 #define INTERPOLATE_ACCELERATION_WITH_Z 0
 #define ACCELERATION_FACTOR_TOP 100
 #define MAX_JERK 20
@@ -415,17 +415,17 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define UI_BED_COATING 1
 #define FEATURE_Z_PROBE 0
 #define Z_PROBE_BED_DISTANCE 10
-#define Z_PROBE_PIN -1
-#define Z_PROBE_PULLUP 0
-#define Z_PROBE_ON_HIGH 0
+#define Z_PROBE_PIN ORIG_Z_MIN_PIN
+#define Z_PROBE_PULLUP 1
+#define Z_PROBE_ON_HIGH 1
 #define Z_PROBE_X_OFFSET 0
 #define Z_PROBE_Y_OFFSET 0
 #define Z_PROBE_WAIT_BEFORE_TEST 0
 #define Z_PROBE_SPEED 2
 #define Z_PROBE_XY_SPEED 150
 #define Z_PROBE_SWITCHING_DISTANCE 1
-#define Z_PROBE_REPETITIONS 1
-#define Z_PROBE_HEIGHT 40
+#define Z_PROBE_REPETITIONS 2
+#define Z_PROBE_HEIGHT 5
 #define Z_PROBE_START_SCRIPT ""
 #define Z_PROBE_FINISHED_SCRIPT ""
 #define Z_PROBE_REQUIRES_HEATING 0
@@ -433,10 +433,10 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define FEATURE_AUTOLEVEL 1
 #define Z_PROBE_X1 20
 #define Z_PROBE_Y1 20
-#define Z_PROBE_X2 160
+#define Z_PROBE_X2 120
 #define Z_PROBE_Y2 20
-#define Z_PROBE_X3 100
-#define Z_PROBE_Y3 160
+#define Z_PROBE_X3 60
+#define Z_PROBE_Y3 120
 #define BED_LEVELING_METHOD 0
 #define BED_CORRECTION_METHOD 0
 #define BED_LEVELING_GRID_SIZE 5
@@ -450,13 +450,13 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define BENDING_CORRECTION_A 0
 #define BENDING_CORRECTION_B 0
 #define BENDING_CORRECTION_C 0
-#define FEATURE_AXISCOMP 0
+#define FEATURE_AXISCOMP 1
 #define AXISCOMP_TANXY 0
 #define AXISCOMP_TANYZ 0
 #define AXISCOMP_TANXZ 0
 
 #ifndef SDSUPPORT  // Some boards have sd support on board. These define the values already in pins.h
-#define SDSUPPORT 0
+#define SDSUPPORT 1
 #undef SDCARDDETECT
 #define SDCARDDETECT -1
 #define SDCARDDETECTINVERTED 0
@@ -469,34 +469,34 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define FEATURE_CHECKSUM_FORCED 0
 #define FEATURE_FAN_CONTROL 1
 #define FEATURE_FAN2_CONTROL 0
-#define FEATURE_CONTROLLER 0
-#define ADC_KEYPAD_PIN -1
+#define FEATURE_CONTROLLER 24
+#define ADC_KEYPAD_PIN 1
 #define LANGUAGE_EN_ACTIVE 1
-#define LANGUAGE_DE_ACTIVE 1
+#define LANGUAGE_DE_ACTIVE 0
 #define LANGUAGE_NL_ACTIVE 0
-#define LANGUAGE_PT_ACTIVE 1
-#define LANGUAGE_IT_ACTIVE 1
-#define LANGUAGE_ES_ACTIVE 1
+#define LANGUAGE_PT_ACTIVE 0
+#define LANGUAGE_IT_ACTIVE 0
+#define LANGUAGE_ES_ACTIVE 0
 #define LANGUAGE_FI_ACTIVE 0
 #define LANGUAGE_SE_ACTIVE 0
-#define LANGUAGE_FR_ACTIVE 1
+#define LANGUAGE_FR_ACTIVE 0
 #define LANGUAGE_CZ_ACTIVE 0
-#define LANGUAGE_PL_ACTIVE 1
-#define LANGUAGE_TR_ACTIVE 1
-#define UI_PRINTER_NAME "RepRap"
-#define UI_PRINTER_COMPANY "Home made"
-#define UI_PAGES_DURATION 4000
+#define LANGUAGE_PL_ACTIVE 0
+#define LANGUAGE_TR_ACTIVE 0
+#define UI_PRINTER_NAME "X1 TMRMN"
+#define UI_PRINTER_COMPANY "TronXY"
+#define UI_PAGES_DURATION 5000
 #define UI_ANIMATION 0
 #define UI_SPEEDDEPENDENT_POSITIONING 0
 #define UI_DISABLE_AUTO_PAGESWITCH 1
-#define UI_AUTORETURN_TO_MENU_AFTER 30000
+#define UI_AUTORETURN_TO_MENU_AFTER 50000
 #define FEATURE_UI_KEYS 0
 #define UI_ENCODER_SPEED 1
 #define UI_REVERSE_ENCODER 0
 #define UI_KEY_BOUNCETIME 10
-#define UI_KEY_FIRST_REPEAT 500
-#define UI_KEY_REDUCE_REPEAT 50
-#define UI_KEY_MIN_REPEAT 50
+#define UI_KEY_FIRST_REPEAT 250
+#define UI_KEY_REDUCE_REPEAT 25
+#define UI_KEY_MIN_REPEAT 25
 #define FEATURE_BEEPER 0
 #define CASE_LIGHTS_PIN -1
 #define CASE_LIGHT_DEFAULT_ON 1
@@ -511,7 +511,7 @@ Values must be in range 1..255
 #define BEEPER_SHORT_SEQUENCE 2,2
 #define BEEPER_LONG_SEQUENCE 8,8
 #define UI_SET_PRESET_HEATED_BED_TEMP_PLA 60
-#define UI_SET_PRESET_EXTRUDER_TEMP_PLA   190
+#define UI_SET_PRESET_EXTRUDER_TEMP_PLA   200
 #define UI_SET_PRESET_HEATED_BED_TEMP_ABS 110
 #define UI_SET_PRESET_EXTRUDER_TEMP_ABS   240
 #define UI_SET_MIN_HEATED_BED_TEMP  30
