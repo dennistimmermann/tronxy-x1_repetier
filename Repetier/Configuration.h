@@ -330,12 +330,12 @@ It also can add a delay to wait for spindle to run on full speed.
 #define HOMING_FEEDRATE_X 100
 #define HOMING_FEEDRATE_Y 100
 #define HOMING_FEEDRATE_Z 2
-#define HOMING_ORDER HOME_ORDER_XYZ
+#define HOMING_ORDER HOME_ORDER_XYTZ
 #define ZHOME_MIN_TEMPERATURE 0
-#define ZHOME_HEAT_ALL 1
+#define ZHOME_HEAT_ALL 0
 #define ZHOME_HEAT_HEIGHT 20
-#define ZHOME_X_POS 999999
-#define ZHOME_Y_POS 999999
+#define ZHOME_X_POS 75
+#define ZHOME_Y_POS 75
 #define ENABLE_BACKLASH_COMPENSATION 0
 #define X_BACKLASH 0
 #define Y_BACKLASH 0
