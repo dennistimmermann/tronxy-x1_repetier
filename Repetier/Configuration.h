@@ -264,7 +264,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define max_software_endstop_z true
 #define ENDSTOP_X_BACK_MOVE 5
 #define ENDSTOP_Y_BACK_MOVE 5
-#define ENDSTOP_Z_BACK_MOVE 2
+#define ENDSTOP_Z_BACK_MOVE 5
 #define ENDSTOP_X_RETEST_REDUCTION_FACTOR 3
 #define ENDSTOP_Y_RETEST_REDUCTION_FACTOR 3
 #define ENDSTOP_Z_RETEST_REDUCTION_FACTOR 3
