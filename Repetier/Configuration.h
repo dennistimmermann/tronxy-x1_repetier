@@ -422,7 +422,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define Z_PROBE_Z_OFFSET_MODE 0
 #define UI_BED_COATING 1
 #define FEATURE_Z_PROBE 1
-#define Z_PROBE_BED_DISTANCE 1
+#define Z_PROBE_BED_DISTANCE 5
 #define Z_PROBE_PIN ORIG_Z_MIN_PIN
 #define Z_PROBE_PULLUP 1
 #define Z_PROBE_ON_HIGH 1
@@ -433,8 +433,8 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define Z_PROBE_XY_SPEED 150
 #define Z_PROBE_SWITCHING_DISTANCE 1
 #define Z_PROBE_REPETITIONS 2
-#define Z_PROBE_HEIGHT 5
-#define Z_PROBE_START_SCRIPT ""
+#define Z_PROBE_HEIGHT 0
+#define Z_PROBE_START_SCRIPT "G1 Z10\nG28 X0\nG28 Y0\n"
 #define Z_PROBE_FINISHED_SCRIPT ""
 #define Z_PROBE_REQUIRES_HEATING 0
 #define Z_PROBE_MIN_TEMPERATURE 150
